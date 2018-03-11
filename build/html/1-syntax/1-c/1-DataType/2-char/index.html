@@ -92,8 +92,10 @@
             
             
               <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../0-summary/index.html">概述简介</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">语法基础</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../../index.html">c语言篇</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../0-ProgramStruct.html">程序结构</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../index.html">数据类型</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="../1-int/index.html">数值型</a></li>
 <li class="toctree-l4 current"><a class="current reference internal" href="#">字符型</a></li>
@@ -111,7 +113,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../../4-expression/index.html">表达式</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../5-statement/index.html">语句</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../6-function/index.html">函数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../7-keyword/index.html">关键字</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../7-PreHandel/index.html">预处理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../8-notes/index.html">代码注释</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../keyword/index.html">关键字</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../standard/index.html">语法规范</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../2-c++/index.html">c++语言篇</a></li>
@@ -119,7 +124,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../2-library/index.html">常用类库</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../3-datastruct/index.html">数据结构</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../4-tools/index.html">开发工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../4-algorithm/index.html">算法基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../5-tools/index.html">开发工具</a></li>
 </ul>
 
             
@@ -191,6 +197,46 @@
             
   <div class="section" id="id1">
 <h1>字符型<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="14%" />
+<col width="19%" />
+<col width="19%" />
+<col width="19%" />
+<col width="29%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">类型关键字</th>
+<th class="head">类型说明</th>
+<th class="head">存储大小(linux)</th>
+<th class="head">值范围</th>
+<th class="head">示例</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>char</td>
+<td>有符号字符型</td>
+<td>sizeof(short)=1[x86和x86_64]</td>
+<td>-128~127</td>
+<td>char a = ‘a’/0x61</td>
+</tr>
+<tr class="row-odd"><td>unsigned char</td>
+<td>无符号字符型</td>
+<td>sizeof(unsigned short)=1[x86和x86_64]</td>
+<td>0~255</td>
+<td>unsigned char a = 0xff</td>
+</tr>
+</tbody>
+</table>
+<p>在C中我们可以将<code class="docutils literal"><span class="pre">char</span></code>和<code class="docutils literal"><span class="pre">unsigned</span> <span class="pre">char</span></code>理解成<code class="docutils literal"><span class="pre">1</span> <span class="pre">Bytes的整型数</span></code>===对照<code class="docutils literal"><span class="pre">ASCII码表</span></code></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">char</span> <span class="pre">a</span> <span class="pre">=</span> <span class="pre">'a'</span></code>、<code class="docutils literal"><span class="pre">char</span> <span class="pre">a</span> <span class="pre">=</span> <span class="pre">0x61</span></code>、<code class="docutils literal"><span class="pre">int</span> <span class="pre">a</span> <span class="pre">=</span> <span class="pre">97</span></code>三者是等价的</li>
+</ul>
+<p><strong>注意</strong></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">'a'</span></code>：单引号表示字符</li>
+<li><code class="docutils literal"><span class="pre">&quot;a&quot;</span></code>：双引号表示字符串</li>
+</ul>
 </div>
 
 

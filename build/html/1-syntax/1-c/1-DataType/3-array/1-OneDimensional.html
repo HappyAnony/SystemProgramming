@@ -1,0 +1,388 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>一维数组 &mdash; C/C++ System Program 1.0.0 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../../../../genindex.html"/>
+        <link rel="search" title="搜索" href="../../../../search.html"/>
+    <link rel="top" title="C/C++ System Program 1.0.0 文档" href="../../../../index.html"/>
+        <link rel="up" title="数组型" href="index.html"/>
+        <link rel="next" title="二维数组" href="2-TwoDimensional.html"/>
+        <link rel="prev" title="数组型" href="index.html"/> 
+
+  
+  <script src="../../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../../index.html" class="icon icon-home"> C/C++ System Program
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../0-summary/index.html">概述简介</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">语法基础</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../../index.html">c语言篇</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../0-ProgramStruct.html">程序结构</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html">数据类型</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="../1-int/index.html">数值型</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../2-char/index.html">字符型</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="index.html">数组型</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../4-str/index.html">字符串</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../5-ptr/index.html">指针型</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../6-struct/index.html">结构体</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../7-enum/index.html">枚举型</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../8-union/index.html">联合体</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../9-void/index.html">无类型</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../2-variable/index.html">常量与变量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../3-symbol/index.html">运算符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../4-expression/index.html">表达式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../5-statement/index.html">语句</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../6-function/index.html">函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../7-PreHandel/index.html">预处理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../8-notes/index.html">代码注释</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../keyword/index.html">关键字</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../standard/index.html">语法规范</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../2-c++/index.html">c++语言篇</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../2-library/index.html">常用类库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../3-datastruct/index.html">数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../4-algorithm/index.html">算法基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../5-tools/index.html">开发工具</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">C/C++ System Program</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../../../index.html">语法基础</a> &raquo;</li>
+        
+          <li><a href="../../index.html">c语言篇</a> &raquo;</li>
+        
+          <li><a href="../index.html">数据类型</a> &raquo;</li>
+        
+          <li><a href="index.html">数组型</a> &raquo;</li>
+        
+      <li>一维数组</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../../../_sources/1-syntax/1-c/1-DataType/3-array/1-OneDimensional.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>一维数组<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>接下来我们将从以下几个方面来学习一维数组</p>
+<ul class="simple">
+<li><a class="reference external" href="#defineone">数组定义</a></li>
+<li><a class="reference external" href="#initone">数组初始化</a></li>
+<li><a class="reference external" href="#accessone">数组访问</a></li>
+<li><a class="reference external" href="#applyone">数组应用</a></li>
+</ul>
+<div class="section" id="x00">
+<span id="defineone"></span><h2>0x00 数组定义<a class="headerlink" href="#x00" title="永久链接至标题">¶</a></h2>
+<p>一维数组声明定义的格式是：<code class="docutils literal"><span class="pre">type</span> <span class="pre">ArrayName</span> <span class="pre">[ArraySize];</span></code></p>
+<ul class="simple">
+<li><strong>type</strong>：数组元素的数据类型</li>
+<li><strong>ArrayName</strong>：数组的数组名</li>
+<li><strong>ArraySize</strong>：数组元素的数量</li>
+</ul>
+<p>例如：<code class="docutils literal"><span class="pre">int</span> <span class="pre">a[10];</span></code>定义了一个名为<strong>a</strong>的数组，该数组有10个成员 每个成员都是int类型</p>
+<ul class="simple">
+<li>该定义开辟了<code class="docutils literal"><span class="pre">sizeof(int)*10=40</span></code>字节的内存空间，依次连续存放<strong>a[0]~a[9]</strong>10个元素</li>
+<li>数组名<code class="docutils literal"><span class="pre">a</span></code>是一个常量[不能当做变量被赋值]，它代表数组首元素的地址</li>
+<li>此时该数组并没有被初始化，每个元素的值是随机的</li>
+</ul>
+<p>定义数组时，ArraySize可以是变量，其定义方法可以是</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="c1">//方法一：c99之后的编译器才支持</span>
+<span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+
+<span class="c1">//方法二：标准c写法</span>
+<span class="cp">#define NUM 10</span>
+<span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="n">NUM</span><span class="p">];</span>
+</pre></div>
+</div>
+<p><strong>注意</strong>：<code class="docutils literal"><span class="pre">char</span> <span class="pre">a[10];</span></code></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">a</span></code>表示数组首元素的地址，即<code class="docutils literal"><span class="pre">a[0]</span></code>元素的地址，<code class="docutils literal"><span class="pre">a+1</span></code>表示<code class="docutils literal"><span class="pre">a[1]</span></code>的地址</li>
+<li><code class="docutils literal"><span class="pre">&amp;a</span></code>表示整个数组的首地址，<code class="docutils literal"><span class="pre">&amp;a+1</span></code>表示跳过了整个数组</li>
+</ul>
+</div>
+<div class="section" id="x01">
+<span id="initone"></span><h2>0x01 数组初始化<a class="headerlink" href="#x01" title="永久链接至标题">¶</a></h2>
+<p>当定义一个数组时只是分配了相应的内存空间，内存空间存储的依然是之前的随机值，此时需要通过初始化存放我们想要存储的数据；数组初始化的方式有：</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">int</span> <span class="pre">a[4]</span> <span class="pre">=</span> <span class="pre">{1,2,3,4};</span></code>：a[0]~a[3]的值分别初始化为1,2,3,4；每个元素都占用4字节空间</li>
+<li><code class="docutils literal"><span class="pre">int</span> <span class="pre">a[4]</span> <span class="pre">=</span> <span class="pre">{1,3};</span></code>：a[0]初始化为1，a[1]初始化为3，a[2]~a[3]初始为0；每个元素都占用4字节空间</li>
+<li><code class="docutils literal"><span class="pre">int</span> <span class="pre">a[]</span> <span class="pre">=</span> <span class="pre">{1,2,3};</span></code>：数组a只有3个元素，分别初始化为1,2,3；每个元素都占用4字节空间</li>
+<li><code class="docutils literal"><span class="pre">int</span> <span class="pre">a[4]</span> <span class="pre">=</span> <span class="pre">{0};</span></code>：a[0]~a[3]都初始化为0；每个元素都占用4字节空间</li>
+<li><code class="docutils literal"><span class="pre">char</span> <span class="pre">a[4]</span> <span class="pre">=</span> <span class="pre">{0}</span></code>：a[0]~a[3]都初始好为0；每个元素都占用1字节空间</li>
+<li><code class="docutils literal"><span class="pre">char</span> <span class="pre">a[6]</span> <span class="pre">=</span> <span class="pre">&quot;hello&quot;</span></code>：a[0]~a[5]分别初始化为<strong>’h’/’e’/’l’/’l’/’o’/‘0’</strong>；每个元素占用1个字节。注意：数组元素的个数一定要大于字符串常量的长度，因为字符串是以‘0’结尾，”hello”实际是以<strong>’h’/’e’/’l’/’l’/’o’/‘0’</strong>存放的</li>
+<li><code class="docutils literal"><span class="pre">char</span> <span class="pre">a[10]</span> <span class="pre">=</span> <span class="pre">&quot;hello&quot;</span></code>：a[0]~a[5]分别初始化为<strong>’h’/’e’/’l’/’l’/’o’/‘0’</strong>，剩余元素都初始为0；每个元素都占用1个字节空间</li>
+</ul>
+</div>
+<div class="section" id="x02">
+<span id="accessone"></span><h2>0x02 数组访问<a class="headerlink" href="#x02" title="永久链接至标题">¶</a></h2>
+<p>数组是通过索引下标的方式来访问元素的，以下demo代码就是访问数组每个元素然后打印输出</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+        <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">a</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">};</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>上述demo代码中：</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">sizeof(a)</span></code>表示数组a在内存中占用大小</li>
+<li><code class="docutils literal"><span class="pre">sizeof(a[0])</span></code>表示数组a的首元素在内存中占用大小[即每个元素在内存中占用大小]</li>
+<li><code class="docutils literal"><span class="pre">sizeof(a)/sizeof(a[0])</span></code>表示数组元素的个数</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="x03">
+<span id="applyone"></span><h2>0x03 数组应用<a class="headerlink" href="#x03" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id6">
+<h3>冒泡排序<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>算法思路</p>
+<ul class="simple">
+<li>第一次遍历整个数组10个元素，通过相邻值比较将最大值放到最右边</li>
+<li>第二次遍历剩下的9个元素，通过相邻值比较将最大值放到最右边</li>
+<li>依次循环遍历，直到遍历最后1个元素</li>
+</ul>
+<p>代码实现如下：</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+        <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">a</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">34</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">124</span><span class="p">,</span><span class="mi">624</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">65</span><span class="p">,};</span>
+        <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">count</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
+                <span class="k">for</span><span class="p">(</span><span class="n">j</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span><span class="n">j</span> <span class="o">&lt;</span> <span class="n">count</span><span class="o">-</span><span class="n">i</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">){</span>
+                        <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]){</span>
+                                <span class="kt">int</span> <span class="n">tmp</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">];</span>
+                                <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span><span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">];</span>
+                                <span class="n">a</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">tmp</span><span class="p">;</span>
+                        <span class="p">}</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">count</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]);</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="2-TwoDimensional.html" class="btn btn-neutral float-right" title="二维数组" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="数组型" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, HappyAnony.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../../',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../../../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

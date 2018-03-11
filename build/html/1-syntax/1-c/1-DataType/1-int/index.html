@@ -92,8 +92,10 @@
             
             
               <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../../0-summary/index.html">概述简介</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../../../index.html">语法基础</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../../index.html">c语言篇</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../../0-ProgramStruct.html">程序结构</a></li>
 <li class="toctree-l3 current"><a class="reference internal" href="../index.html">数据类型</a><ul class="current">
 <li class="toctree-l4 current"><a class="current reference internal" href="#">数值型</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../2-char/index.html">字符型</a></li>
@@ -111,7 +113,10 @@
 <li class="toctree-l3"><a class="reference internal" href="../../4-expression/index.html">表达式</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../5-statement/index.html">语句</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../6-function/index.html">函数</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../7-keyword/index.html">关键字</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../7-PreHandel/index.html">预处理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../8-notes/index.html">代码注释</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../keyword/index.html">关键字</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../standard/index.html">语法规范</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../../2-c++/index.html">c++语言篇</a></li>
@@ -119,7 +124,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../2-library/index.html">常用类库</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../3-datastruct/index.html">数据结构</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../../../4-tools/index.html">开发工具</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../4-algorithm/index.html">算法基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../5-tools/index.html">开发工具</a></li>
 </ul>
 
             
@@ -191,6 +197,173 @@
             
   <div class="section" id="id1">
 <h1>数值型<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>数值型可分为两大类：</p>
+<ul class="simple">
+<li><a class="reference external" href="#integer">整型</a></li>
+<li><a class="reference external" href="#float">浮点型</a></li>
+</ul>
+<div class="section" id="x00">
+<span id="integer"></span><h2>0x00 整型<a class="headerlink" href="#x00" title="永久链接至标题">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="11%" />
+<col width="22%" />
+<col width="22%" />
+<col width="22%" />
+<col width="22%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">类型关键字</th>
+<th class="head">类型说明</th>
+<th class="head">存储大小(linux)</th>
+<th class="head">值范围</th>
+<th class="head">示例</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>short</td>
+<td>有符号短整型</td>
+<td>sizeof(short)=2[x86和x86_64]</td>
+<td>-32768~32767</td>
+<td>short a = 20;</td>
+</tr>
+<tr class="row-odd"><td>unsigned short</td>
+<td>无符号短整型</td>
+<td>sizeof(unsigned short)=2[x86和x86_64]</td>
+<td>0~65535</td>
+<td>unsigned short a = 20;</td>
+</tr>
+<tr class="row-even"><td>int</td>
+<td>有符号整型</td>
+<td>sizeof(int)=2[x86]/4[x86_64]</td>
+<td>-32768~32767或-2147483648~2147483647</td>
+<td>int a = 20[10进制]/020[8进制]/0x20[16进制];</td>
+</tr>
+<tr class="row-odd"><td>unsigned int</td>
+<td>无符号整型</td>
+<td>sizeof(unsigned int)=2[x86]/4[x86_64]</td>
+<td>0~65535或0~4294967295</td>
+<td>unsigned int a = 20;</td>
+</tr>
+<tr class="row-even"><td>long</td>
+<td>有符号长整型</td>
+<td>sizeof(long)=4[x86]/8[x86_64]</td>
+<td>-2147483648~2147483647或‭-9223372036854775808‬~‭9223372036854775807‬</td>
+<td>long a = 20;</td>
+</tr>
+<tr class="row-odd"><td>unsigned long</td>
+<td>无符号长整型</td>
+<td>sizeof(unsigned long)=4[x86]/8[x86_64]</td>
+<td>0~4294967295或0~‭1777777777777777777777‬</td>
+<td>unsigned long a = 20;</td>
+</tr>
+<tr class="row-even"><td>long long</td>
+<td>有符号长长整型</td>
+<td>sizeof(long long)=8[x86和x86_64]</td>
+<td>-9223372036854775808‬~‭9223372036854775807</td>
+<td>long long a = 20;</td>
+</tr>
+<tr class="row-odd"><td>unsigned long long</td>
+<td>无符号长长整型</td>
+<td>sizeof(unsigned long long)=8[x86和x86_64]</td>
+<td>0~‭1777777777777777777777</td>
+<td>unsigned long long a = 20;‬</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">整型数</th>
+<th class="head">对应类型</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>100</td>
+<td>int</td>
+</tr>
+<tr class="row-odd"><td>100u</td>
+<td>unsigned int</td>
+</tr>
+<tr class="row-even"><td>100l</td>
+<td>long</td>
+</tr>
+<tr class="row-odd"><td>100ul</td>
+<td>unsigned long</td>
+</tr>
+<tr class="row-even"><td>100ll</td>
+<td>long long</td>
+</tr>
+<tr class="row-odd"><td>100ull</td>
+<td>unsigned long long</td>
+</tr>
+</tbody>
+</table>
+<p>整型数据存在两种类型的溢出</p>
+<ul class="simple">
+<li><strong>符号位溢出</strong>：超过有符号数的最大值</li>
+<li><strong>最高位溢出</strong>：超过无符号数的最大值</li>
+</ul>
+<p><strong>注意</strong>：在所有数值类型中(包括浮点型)，计算机CPU处理int类型数据的效率是最高的，int只是占用较大内存而已</p>
+</div>
+<div class="section" id="x01">
+<span id="float"></span><h2>0x01 浮点型<a class="headerlink" href="#x01" title="永久链接至标题">¶</a></h2>
+<table border="1" class="colwidths-given docutils">
+<colgroup>
+<col width="19%" />
+<col width="25%" />
+<col width="25%" />
+<col width="19%" />
+<col width="13%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">类型关键字</th>
+<th class="head">类型说明</th>
+<th class="head">存储大小(linux)</th>
+<th class="head">值范围</th>
+<th class="head">精度</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>float</td>
+<td>单精度浮点数</td>
+<td>sizeof(float)=4[x86_64]</td>
+<td>1.2E-38~3.4E+38</td>
+<td>6位小数</td>
+</tr>
+<tr class="row-odd"><td>double</td>
+<td>双精度浮点数</td>
+<td>sizeof(double)=8[x86_64]</td>
+<td>2.3E-308~1.7E+308</td>
+<td>15位小数</td>
+</tr>
+<tr class="row-even"><td>long double</td>
+<td>长双精度浮点数</td>
+<td>sizeof(long double)=16[x86_64]</td>
+<td>3.4E-4932~1.1E+4932</td>
+<td>18位小数</td>
+</tr>
+</tbody>
+</table>
+<p>在头文件<code class="docutils literal"><span class="pre">float.h</span></code>定义了浮点型相关的宏；通过这些宏可以输出浮点类型占用的存储空间以及它的范围值</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;float.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Storage size for float : %d </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="kt">float</span><span class="p">));</span>
+   <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Minimum float positive value: %E</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">FLT_MIN</span> <span class="p">);</span>
+   <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Maximum float positive value: %E</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">FLT_MAX</span> <span class="p">);</span>
+   <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Precision value: %d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span> <span class="n">FLT_DIG</span> <span class="p">);</span>
+
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
 </div>
 
 

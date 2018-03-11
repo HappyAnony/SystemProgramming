@@ -1,0 +1,299 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>程序结构 &mdash; C/C++ System Program 1.0.0 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="索引"
+              href="../../genindex.html"/>
+        <link rel="search" title="搜索" href="../../search.html"/>
+    <link rel="top" title="C/C++ System Program 1.0.0 文档" href="../../index.html"/>
+        <link rel="up" title="c语言篇" href="index.html"/>
+        <link rel="next" title="数据类型" href="1-DataType/index.html"/>
+        <link rel="prev" title="c语言篇" href="index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> C/C++ System Program
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../0-summary/index.html">概述简介</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">语法基础</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">c语言篇</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">程序结构</a></li>
+<li class="toctree-l3"><a class="reference internal" href="1-DataType/index.html">数据类型</a></li>
+<li class="toctree-l3"><a class="reference internal" href="2-variable/index.html">常量与变量</a></li>
+<li class="toctree-l3"><a class="reference internal" href="3-symbol/index.html">运算符</a></li>
+<li class="toctree-l3"><a class="reference internal" href="4-expression/index.html">表达式</a></li>
+<li class="toctree-l3"><a class="reference internal" href="5-statement/index.html">语句</a></li>
+<li class="toctree-l3"><a class="reference internal" href="6-function/index.html">函数</a></li>
+<li class="toctree-l3"><a class="reference internal" href="7-PreHandel/index.html">预处理</a></li>
+<li class="toctree-l3"><a class="reference internal" href="8-notes/index.html">代码注释</a></li>
+<li class="toctree-l3"><a class="reference internal" href="keyword/index.html">关键字</a></li>
+<li class="toctree-l3"><a class="reference internal" href="standard/index.html">语法规范</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../2-c++/index.html">c++语言篇</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../2-library/index.html">常用类库</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../3-datastruct/index.html">数据结构</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../4-algorithm/index.html">算法基础</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../5-tools/index.html">开发工具</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">C/C++ System Program</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../index.html">语法基础</a> &raquo;</li>
+        
+          <li><a href="index.html">c语言篇</a> &raquo;</li>
+        
+      <li>程序结构</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../../_sources/1-syntax/1-c/0-ProgramStruct.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>程序结构<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>我们在学习每一种编程语言时，都会先学习写一个<code class="docutils literal"><span class="pre">hello</span> <span class="pre">world</span></code>的demo程序，下面我们将从这个小demo程序来窥探一下我们C程序的程序结构</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+<span class="p">{</span>
+   <span class="cm">/* 我的第一个 C 程序 */</span>
+   <span class="kt">int</span> <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+   <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello, World! </span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+
+   <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>以上是一个可以输出<code class="docutils literal"><span class="pre">hello</span> <span class="pre">world</span></code>的简单C代码，该代码的组成部分为：</p>
+<ul class="simple">
+<li><strong>预处理指令</strong>：<code class="docutils literal"><span class="pre">#include</span> <span class="pre">&lt;stdio.h&gt;</span></code>告诉C编译器在实际编译之前需要将<code class="docutils literal"><span class="pre">stdio.h</span></code>文件内容复制包含到当前文件</li>
+<li><strong>函数</strong>：<code class="docutils literal"><span class="pre">int</span> <span class="pre">main()</span></code>是C程序的执行入口；每个C程序有且只能有一个<code class="docutils literal"><span class="pre">main函数</span></code></li>
+<li><strong>语句&amp;表达式</strong>：<code class="docutils literal"><span class="pre">return</span> <span class="pre">0</span></code>会终止<code class="docutils literal"><span class="pre">main()函数</span></code>并返回0；在C中，每个语句必须以分号结束。它表明一个逻辑实体的结束</li>
+<li><strong>常量&amp;变量</strong>：<code class="docutils literal"><span class="pre">ret</span></code>是一个<code class="docutils literal"><span class="pre">int型变量</span></code>、<code class="docutils literal"><span class="pre">hello</span> <span class="pre">world!\n</span></code>是一个字符串常量</li>
+<li><strong>注释</strong>：<code class="docutils literal"><span class="pre">/*...*/</span></code>将会被编译器忽略，这里放置程序的注释内容</li>
+</ul>
+<p>从另外一个角度来看demo程序，该程序是由各种令牌组成：<code class="docutils literal"><span class="pre">关键字</span></code>、<code class="docutils literal"><span class="pre">标识符</span></code>、<code class="docutils literal"><span class="pre">常量</span></code>、<code class="docutils literal"><span class="pre">运算符</span></code></p>
+<p><strong>C标识符</strong>是用来标识<code class="docutils literal"><span class="pre">常量名</span></code>、<code class="docutils literal"><span class="pre">变量名</span></code>、<code class="docutils literal"><span class="pre">函数名</span></code>或任何其他用户自定义的名称。一个标识符以字母<code class="docutils literal"><span class="pre">A-Z</span></code>或<code class="docutils literal"><span class="pre">a-z</span></code>或<code class="docutils literal"><span class="pre">下划线</span> <span class="pre">_</span></code> 开始，后跟<code class="docutils literal"><span class="pre">0个或多个字母、下划线和数字(0-9)</span></code></p>
+<p>需要注意的是；</p>
+<ul class="simple">
+<li>C标识符内不允许出现标点字符，比如<code class="docutils literal"><span class="pre">&#64;</span></code>、<code class="docutils literal"><span class="pre">$</span></code>和<code class="docutils literal"><span class="pre">%</span></code></li>
+<li>C是区分大小写的编程语言；<code class="docutils literal"><span class="pre">Manpower</span></code>和<code class="docutils literal"><span class="pre">manpower</span></code>是两个不同的标识符</li>
+</ul>
+<p><strong>C关键字</strong>就是C中的保留字，它们被赋予特殊意义。这些保留字不能作为常量名，变量名或其它标识符名称。上述demo中的<code class="docutils literal"><span class="pre">include</span></code>、<code class="docutils literal"><span class="pre">int</span></code>、<code class="docutils literal"><span class="pre">return</span></code>都是C关键字。C中一共有32个关键字，详解可见<a class="reference external" href="./keyword/index.html">C关键字</a></p>
+<p><strong>C常量</strong>可以是数值常量<code class="docutils literal"><span class="pre">0</span></code>；也可以是字符串常量<code class="docutils literal"><span class="pre">hello</span> <span class="pre">world</span></code></p>
+<p><strong>C运算符</strong>有很多，它是构成表达式、语句、代码块的重要组成部分。详解可见<a class="reference external" href="./3-symbol/index.html">C运算符</a></p>
+<p>最后特别容易忽视的就是C中的<code class="docutils literal"><span class="pre">空格</span></code>，我们在编程中，为了规范，不同字段之间都会以空格隔开，便于编译器识别解释各字段的含义</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="kt">int</span> <span class="n">ret</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="1-DataType/index.html" class="btn btn-neutral float-right" title="数据类型" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="c语言篇" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, HappyAnony.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'1.0.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="../../_static/translations.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
