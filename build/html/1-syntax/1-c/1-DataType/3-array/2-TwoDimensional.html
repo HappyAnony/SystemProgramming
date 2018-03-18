@@ -37,7 +37,7 @@
         <link rel="search" title="搜索" href="../../../../search.html"/>
     <link rel="top" title="C/C++ System Program 1.0.0 文档" href="../../../../index.html"/>
         <link rel="up" title="数组型" href="index.html"/>
-        <link rel="next" title="三维数组" href="3-ThreeDimensional.html"/>
+        <link rel="next" title="多维数组" href="3-ThreeDimensional.html"/>
         <link rel="prev" title="一维数组" href="1-OneDimensional.html"/> 
 
   
@@ -199,6 +199,113 @@
             
   <div class="section" id="id1">
 <h1>二维数组<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>接下来我们同样从以下几个方面来学习一维数组</p>
+<ul class="simple">
+<li><a class="reference external" href="#definetwo">数组定义</a></li>
+<li><a class="reference external" href="#inittwo">数组初始化</a></li>
+<li><a class="reference external" href="#accesstwo">数组访问</a></li>
+<li><a class="reference external" href="#applytwo">数组应用</a></li>
+</ul>
+<div class="section" id="x00">
+<span id="definetow"></span><h2>0x00 数组定义<a class="headerlink" href="#x00" title="永久链接至标题">¶</a></h2>
+<p>二维数组声明定义的格式是：<code class="docutils literal"><span class="pre">type</span> <span class="pre">ArrayName</span> <span class="pre">[LineNum][RowNum];</span></code></p>
+<ul class="simple">
+<li><strong>type</strong>：数组元素的数据类型</li>
+<li><strong>ArrayName</strong>：数组的数组名</li>
+<li><strong>LineNum</strong>：一维数组的个数，可以形象的理解为行数</li>
+<li><strong>RowNum</strong>：一维数组元素的个数，可以形象的理解为列数</li>
+</ul>
+<p>例如：<code class="docutils literal"><span class="pre">int</span> <span class="pre">a[2][10];</span></code>定义了一个名为<strong>a</strong>的二维数组，该数组有2个一维数组a[0]和a[1]，每个一维数组有10个成员 每个成员都是int类型，这些成员是连续存放的，逻辑上可以理解为2行10列。a[0]/a[1]分别是两个一维数组的数组名，也是两个数组首元素的地址</p>
+<ul class="simple">
+<li>该定义开辟了<code class="docutils literal"><span class="pre">sizeof(int)*10*2=80</span></code>字节的连续内存空间，依次连续存放<strong>a[0][0]~a[0][9]</strong>和<strong>a[1][0]~a[1][9]</strong>20个元素</li>
+<li>二维数组名<code class="docutils literal"><span class="pre">a</span></code>、一维数组名<code class="docutils literal"><span class="pre">a[0]</span></code>和<code class="docutils literal"><span class="pre">a[1]</span></code>是一个常量，不能当做变量被赋值</li>
+<li>此时该数组并没有被初始化，每个元素的值是随机的</li>
+</ul>
+<p><strong>注意</strong>：<code class="docutils literal"><span class="pre">int</span> <span class="pre">a[2][10];</span></code></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">a[0]</span></code>代表第一行数组的首元素地址，即<code class="docutils literal"><span class="pre">a[0][0]</span></code>的地址，<code class="docutils literal"><span class="pre">a[0]+1</span></code>表示<code class="docutils literal"><span class="pre">a[0][1]</span></code>的地址</li>
+<li><code class="docutils literal"><span class="pre">a[1]</span></code>代表第二行数组的首元素地址，即<code class="docutils literal"><span class="pre">a[1][0]</span></code>的地址，<code class="docutils literal"><span class="pre">a[1]+1</span></code>表示<code class="docutils literal"><span class="pre">a[1][1]</span></code>的地址</li>
+<li><code class="docutils literal"><span class="pre">a</span></code>代表第一行数组的首地址，即<code class="docutils literal"><span class="pre">a[0]</span></code>的地址，<code class="docutils literal"><span class="pre">a+1</span></code>表示<code class="docutils literal"><span class="pre">a[1]</span></code>的地址</li>
+<li><code class="docutils literal"><span class="pre">&amp;a</span></code>代表整个二维数组的地址，<code class="docutils literal"><span class="pre">&amp;a+1</span></code>表示跳过了整个二维数组</li>
+<li><code class="docutils literal"><span class="pre">a+i</span></code>表示第i行数组的首地址，相当于一维数组名使用&amp;取地址</li>
+<li><code class="docutils literal"><span class="pre">*(a+i)</span></code>表示第i行数组首元素的地址，相当于一维数组名</li>
+<li><code class="docutils literal"><span class="pre">*(a+i)+j</span></code>表示第i行第j列元素的地址，等价于<code class="docutils literal"><span class="pre">&amp;a[i][j]</span></code></li>
+<li><code class="docutils literal"><span class="pre">*(*(a+i)+j)</span></code>表示第i行第j列元素的值，等价于<code class="docutils literal"><span class="pre">a[i][i]</span></code></li>
+</ul>
+</div>
+<div class="section" id="x01">
+<span id="inittwo"></span><h2>0x01 数组初始化<a class="headerlink" href="#x01" title="永久链接至标题">¶</a></h2>
+<p>当定义一个数组时只是分配了相应的内存空间，内存空间存储的依然是之前的随机值，此时需要通过初始化存放我们想要存储的数据；数组初始化的方式有：</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">int</span> <span class="pre">a[3][4]</span> <span class="pre">=</span> <span class="pre">{{1,2,3,4},{5,6,7,8},{9,10,11,12}};</span></code>：初始化了3个一维数组<code class="docutils literal"><span class="pre">a[0]~a[2]</span></code></li>
+<li><code class="docutils literal"><span class="pre">int</span> <span class="pre">a[3][4]</span> <span class="pre">=</span> <span class="pre">{{1,2,3,4},{5,6,7,8}};</span></code>：初始化了3个一维数组<code class="docutils literal"><span class="pre">a[0]~a[2]</span></code>，a[2]所有元素都是0</li>
+<li><code class="docutils literal"><span class="pre">int</span> <span class="pre">a[3][4]</span> <span class="pre">=</span> <span class="pre">{</span> <span class="pre">0</span> <span class="pre">};</span></code>：初始化了3个一维数组<code class="docutils literal"><span class="pre">a[0]~a[2]</span></code>，所有一维数组的所有元素都是0</li>
+<li><code class="docutils literal"><span class="pre">int</span> <span class="pre">a[][4]</span> <span class="pre">=</span> <span class="pre">{{1,2,3,4},{5,6,7,8},{9,10,11,12},{0}};</span></code>：初始化了4个一维数组<code class="docutils literal"><span class="pre">a[0]~a[3]</span></code></li>
+<li><code class="docutils literal"><span class="pre">char</span> <span class="pre">a[][10]</span> <span class="pre">=</span> <span class="pre">{&quot;my&quot;,&quot;name&quot;,&quot;is&quot;,&quot;anony&quot;};</span></code>：初始化了4个一维数组<code class="docutils literal"><span class="pre">a[0]~a[3]</span></code>，使用<code class="docutils literal"><span class="pre">int</span> <span class="pre">a[][]</span></code>会直接报语法错误</li>
+</ul>
+</div>
+<div class="section" id="x02">
+<span id="accesstwo"></span><h2>0x02 数组访问<a class="headerlink" href="#x02" title="永久链接至标题">¶</a></h2>
+<p>二维数组同样是通过索引下标的方式来访问元素的，以下demo代码就是访问二维数组每个元素然后打印输出</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+        <span class="kt">int</span> <span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">a</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">},{</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">},{</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">}};</span>
+        <span class="kt">int</span> <span class="n">line_index</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">]);</span>
+        <span class="kt">int</span> <span class="n">row_index</span> <span class="o">=</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]);</span>
+        <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">line_index</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">for</span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">row_index</span><span class="p">;</span> <span class="n">j</span><span class="o">++</span><span class="p">)</span>
+                <span class="p">{</span>
+                        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+                <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>上述demo代码中：</p>
+<blockquote>
+<div><ul class="simple">
+<li><code class="docutils literal"><span class="pre">sizeof(a)</span></code>表示二维数组a在内存中占用大小</li>
+<li><code class="docutils literal"><span class="pre">sizeof(a[0])</span></code>表示一维数组a[0]在内存中占用大小[即每个一维数组在内存中占用大小]</li>
+<li><code class="docutils literal"><span class="pre">sizeof(a[0][0])</span></code>表示一维数组a[0]首元素在内存中占用大小[即每个元素在内存中占用大小]</li>
+<li><code class="docutils literal"><span class="pre">sizeof(a)/sizeof(a[0])</span></code>表示一维数组的个数</li>
+<li><code class="docutils literal"><span class="pre">sizeof(a[0])/sizeof(a[0][0])</span></code>表示一维数组数组元素的个数</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="x03">
+<span id="applytwo"></span><h2>0x03 数组应用<a class="headerlink" href="#x03" title="永久链接至标题">¶</a></h2>
+<div class="section" id="id6">
+<h3>冒泡排序<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h3>
+<p>算法思路</p>
+<ul>
+<li><p class="first">先将二维数组放到一个一维数组中</p>
+</li>
+<li><p class="first">然后对一维数组进行冒泡排序</p>
+<blockquote>
+<div><ul class="simple">
+<li>第一次遍历整个数组n个元素，通过相邻值比较将最大值放到最右边</li>
+<li>第二次遍历剩下的n-1个元素，通过相邻值比较将最大值放到最右边</li>
+<li>依次循环遍历，直到遍历最后1个元素</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p class="first">最后将一维数组重新放回二维数组中</p>
+</li>
+</ul>
+</div>
+<div class="section" id="id7">
+<h3>使用技巧<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h3>
+<ul class="simple">
+<li>可以使用二级指针指向二维数组</li>
+<li>可以使用一级数组指针指向二维数组</li>
+<li>不能使用二级指针做形参来接收二维数组【因为步长不一样】</li>
+<li>可以使用一级数组指针做形参来接收二维数组【步长可以保持一致】</li>
+<li>可以使用二维数组做形参类接收二维数组【步长可以保持一致】</li>
+</ul>
+</div>
+</div>
 </div>
 
 
@@ -211,7 +318,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="3-ThreeDimensional.html" class="btn btn-neutral float-right" title="三维数组" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="3-ThreeDimensional.html" class="btn btn-neutral float-right" title="多维数组" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="1-OneDimensional.html" class="btn btn-neutral" title="一维数组" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

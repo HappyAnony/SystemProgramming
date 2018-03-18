@@ -38,7 +38,7 @@
     <link rel="top" title="C/C++ System Program 1.0.0 文档" href="../../../../index.html"/>
         <link rel="up" title="数据类型" href="../index.html"/>
         <link rel="next" title="指针型" href="../5-ptr/index.html"/>
-        <link rel="prev" title="三维数组" href="../3-array/3-ThreeDimensional.html"/> 
+        <link rel="prev" title="常规应用" href="../3-array/4-apply.html"/> 
 
   
   <script src="../../../../_static/js/modernizr.min.js"></script>
@@ -197,6 +197,48 @@
             
   <div class="section" id="id1">
 <h1>字符串<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>字符串是内存中一段连续的char空间，以<code class="docutils literal"><span class="pre">'\0'</span></code>结尾：例如<code class="docutils literal"><span class="pre">&quot;a&quot;</span></code>表示<code class="docutils literal"><span class="pre">'a'</span></code>和<code class="docutils literal"><span class="pre">'\0'</span></code></p>
+<p>注意：<code class="docutils literal"><span class="pre">'a'</span></code>表示int类型或char类型；<code class="docutils literal"><span class="pre">&quot;a&quot;</span></code>才表示字符串类型</p>
+<p>字符串的定义初始化方法有两种</p>
+<ul class="simple">
+<li>字符char数组</li>
+<li>字符char指针</li>
+</ul>
+<div class="highlight-c"><div class="highlight"><pre><span></span>//字符char数组
+/*
+*字符串的长度一定不能超过char数组的长度，因为字符串是以&#39;\0&#39;结尾的，必须保证char数组的最后一个元素的值是&#39;\0&#39;
+*所以在定义char数组时就将其初始化为0
+*/
+char a[10]={‘h’,’e’,’l’,’l’,’o’};//初始化时，元素&#39;o&#39;后面的元素初始化为0即&#39;\0&#39;，所以它也是一段连续的char空间，并以&#39;0&#39;结尾
+char a[10]=&quot;hello&quot;;              //初始化时，a[0]~a[4]分别被初始化&#39;h&#39;/&#39;e&#39;/&#39;l&#39;/&#39;l&#39;/&#39;o&#39;，剩余元素初始为0
+char a[10]={ 0 };                //初始化时，所有元素都初始为0
+char a[]=&quot;hello&quot;;                //初始化时，数组a有6个元素a[0]~a[5]，分别为&#39;h&#39;/&#39;e&#39;/&#39;l&#39;/&#39;l&#39;/&#39;o&#39;/&#39;\0&#39;
+
+//字符char指针
+char *p = &quot;hello&quot;;               //定义一个char类型的指针指向字符串
+
+//char指针可以引用char数组
+char b[10] = &quot;hello&quot;;
+char *p = b;
+</pre></div>
+</div>
+<p>下面有一个demo，实现功能是：去掉给定字符串后面的空格</p>
+<div class="highlight-c"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+        <span class="kt">char</span> <span class="n">a</span><span class="p">[]</span> <span class="o">=</span> <span class="s">&quot;hello world a     &quot;</span><span class="p">;</span>
+        <span class="kt">int</span> <span class="n">index</span><span class="o">=</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">/</span><span class="k">sizeof</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">-</span><span class="mi">2</span><span class="p">;</span><span class="c1">//数组a的最后一个元素是字符串结尾的‘0’，所以需要从倒数第二个元素开始遍历的</span>
+        <span class="k">while</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">index</span><span class="p">]){</span>
+                <span class="k">if</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">index</span><span class="p">]</span> <span class="o">!=</span> <span class="sc">&#39; &#39;</span><span class="p">){</span>
+                        <span class="n">a</span><span class="p">[</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+                        <span class="k">break</span><span class="p">;</span>
+                <span class="p">}</span>
+                <span class="n">index</span><span class="o">--</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">a</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 
 
@@ -212,7 +254,7 @@
         <a href="../5-ptr/index.html" class="btn btn-neutral float-right" title="指针型" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../3-array/3-ThreeDimensional.html" class="btn btn-neutral" title="三维数组" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../3-array/4-apply.html" class="btn btn-neutral" title="常规应用" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

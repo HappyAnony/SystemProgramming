@@ -37,7 +37,7 @@
         <link rel="search" title="搜索" href="../../../../search.html"/>
     <link rel="top" title="C/C++ System Program 1.0.0 文档" href="../../../../index.html"/>
         <link rel="up" title="数据类型" href="../index.html"/>
-        <link rel="next" title="结构体" href="../6-struct/index.html"/>
+        <link rel="next" title="一级指针" href="1-OnePointer.html"/>
         <link rel="prev" title="字符串" href="../4-str/index.html"/> 
 
   
@@ -197,9 +197,23 @@
             
   <div class="section" id="id1">
 <h1>指针型<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<p>学习C语言的指针既简单又有趣。通过指针，可以简化一些C编程任务的执行，还有一些任务，如动态内存分配，没有指针是无法执行的。所以，想要成为一名优秀的 C 程序员，学习指针是很有必要的。</p>
+<p>指针也是一种数据类型，它也是固定内存大小的别名</p>
 <ul class="simple">
-<li>能用一级指针解决的问题不要用二级，能用二级解决的问题不要用三级，尽量避免使用多级指针</li>
+<li>32位系统下，指针是一个4字节的无符号整数</li>
+<li>64位系统下，指针是一个8字节的无符号整数</li>
 </ul>
+<p>使用指针类型定义的变量也是一种变量，叫做指针变量，它是一段可读可写的连续内存空间的别名；指针变量存储的是一个内存地址，该地址指向另一块内存地址[即另一个变量的地址]</p>
+<p>说到内存地址，内存的最小单位是<code class="docutils literal"><span class="pre">Byte</span></code>，操作系统使用<code class="docutils literal"><span class="pre">malloc</span></code>等手动分配内存库函数分配内存的最小单位是<code class="docutils literal"><span class="pre">4kB(windows下)</span></code>对于内存，每个<code class="docutils literal"><span class="pre">Byte</span></code>都有一个唯一的编号，这个编号就是内存地址，即每个内存地址对应一个<code class="docutils literal"><span class="pre">1Byte</span></code>空间大小</p>
+<p>接下来我们将从如下几个方面来学习指针</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="1-OnePointer.html">一级指针</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2-TwoPointer.html">二级指针</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-ThreePointer.html">三级指针</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-application.html">指针应用</a></li>
+</ul>
+</div>
 </div>
 
 
@@ -212,7 +226,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../6-struct/index.html" class="btn btn-neutral float-right" title="结构体" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="1-OnePointer.html" class="btn btn-neutral float-right" title="一级指针" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="../4-str/index.html" class="btn btn-neutral" title="字符串" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>

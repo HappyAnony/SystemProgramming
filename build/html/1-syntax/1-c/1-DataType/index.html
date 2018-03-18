@@ -198,19 +198,23 @@
 <p>数据类型的本质：<code class="docutils literal"><span class="pre">固定内存大小的别名</span></code></p>
 <p>数据类型的作用：</p>
 <ul class="simple">
-<li>决定了声明变量的内存存储大小</li>
+<li>决定了定义变量的内存存储大小</li>
 </ul>
 <p>数据类型的误区：</p>
 <ul class="simple">
-<li>它不能决定声明变量的内存存储形式</li>
-<li>它不能决定声明变量的内存存储模式</li>
+<li>它不能决定定义变量的内存存储形式</li>
+<li>它不能决定定义变量的内存存储模式</li>
 </ul>
 <p>现代整个计算机科学都是建立在二进制基础上，所有数据都是以<code class="docutils literal"><span class="pre">0</span></code>和<code class="docutils literal"><span class="pre">1</span></code>组合形式进行存储和传输的。这里的<code class="docutils literal"><span class="pre">0或1</span></code>就是<code class="docutils literal"><span class="pre">1bit</span></code></p>
 <div class="section" id="x00">
 <h2>0x00 存储大小<a class="headerlink" href="#x00" title="永久链接至标题">¶</a></h2>
 <p>在通信领域，网络带宽传输速度的基本单位是比特(bits)</p>
 <p>然而在计算即领域，磁盘存储数据的基本单位是字节(Bytes==1字节等于8比特)；不同数据类型变量的存储大小是不一样的，例如：<code class="docutils literal"><span class="pre">char类型</span></code>变量64位系统下的存储大小是1字节， <code class="docutils literal"><span class="pre">short类型</span></code>变量64位系统下的存储大小是2字节。具体相关介绍可见<a class="reference external" href="#datatype">数据类型详解目录表</a></p>
-<p>需要注意的是：c语言没有规定数据类型(例如int类型)的具体大小，数据类型的具体大小和系统有关；同一系统下，同一种数据类型的大小是相同的</p>
+<p>需要注意的是：</p>
+<ul class="simple">
+<li>c语言没有规定数据类型(例如int类型)的具体大小，数据类型的具体大小和系统有关；同一系统下，同一种数据类型的大小是相同的</li>
+<li>数据类型只是一个声明，并没有占用内存空间，只有当使用数据类型定义一个变量时，变量才占用空间，其所占用空间大小由数据类型决定，数据类型声明的内存大小和变量所占的内存大小都可以使用<code class="docutils literal"><span class="pre">sizeof</span></code>关键字来获取</li>
+</ul>
 </div>
 <div class="section" id="x01">
 <h2>0x01 存储形式<a class="headerlink" href="#x01" title="永久链接至标题">¶</a></h2>
@@ -242,11 +246,18 @@
 <li class="toctree-l1"><a class="reference internal" href="3-array/index.html">数组型</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="3-array/1-OneDimensional.html">一维数组</a></li>
 <li class="toctree-l2"><a class="reference internal" href="3-array/2-TwoDimensional.html">二维数组</a></li>
-<li class="toctree-l2"><a class="reference internal" href="3-array/3-ThreeDimensional.html">三维数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-array/3-ThreeDimensional.html">多维数组</a></li>
+<li class="toctree-l2"><a class="reference internal" href="3-array/4-apply.html">常规应用</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="4-str/index.html">字符串</a></li>
-<li class="toctree-l1"><a class="reference internal" href="5-ptr/index.html">指针型</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5-ptr/index.html">指针型</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="5-ptr/1-OnePointer.html">一级指针</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5-ptr/2-TwoPointer.html">二级指针</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5-ptr/3-ThreePointer.html">三级指针</a></li>
+<li class="toctree-l2"><a class="reference internal" href="5-ptr/4-application.html">指针应用</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="6-struct/index.html">结构体</a></li>
 <li class="toctree-l1"><a class="reference internal" href="7-enum/index.html">枚举型</a></li>
 <li class="toctree-l1"><a class="reference internal" href="8-union/index.html">联合体</a></li>
